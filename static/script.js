@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function formatDateTime(datetime) {
         const date = new Date(datetime);
-        return date.toISOString().split('.')[0] + 'Z';
+        return date.toISOString().split('.')[0];
     }
 
     async function fetchData(datetime = null) {
