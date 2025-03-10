@@ -6,13 +6,19 @@ document.addEventListener("DOMContentLoaded", () => {
     const now = new Date();
     datetimePicker.value = now.toISOString().slice(0, 16);
 
+    function formatDateTime(datetime) {
+        const date = new Date(datetime);
+        return date.toISOString().split('.')[0] + 'Z';
+    }
+
     async function fetchData(datetime = null) {
         try {
             let apiUrl = baseApiUrl;
             
             // Add datetime parameter if provided
             if (datetime) {
-                apiUrl += `?datetime_str=${datetime}`;
+                const formattedDateTime = formatDateTime(datetime);
+                apiUrl += `?datetime_str=${formattedDateTime}`;
             }
 
             const response = await fetch(apiUrl);
@@ -67,9 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("update-time").addEventListener("click", () => {
         const selectedDateTime = datetimePicker.value;
         if (selectedDateTime) {
-            // Convert to ISO string format
-            const formattedDateTime = new Date(selectedDateTime).toISOString();
-            fetchData(formattedDateTime);
+            fetchData(selectedDateTime);
         }
     });
 
