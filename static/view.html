@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather and Activity Suggestions</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Weather and Activity Suggestions</h1>
+            <div class="datetime-picker">
+                <input type="datetime-local" id="datetime-picker" class="datetime-input">
+                <button id="update-time" class="datetime-button">Update</button>
+            </div>
+            <p id="time">Loading current time...</p>
+        </header>
+        <section id="weather">
+            <h2>Current Conditions</h2>
+            <p><strong>Location:</strong> <span id="location">Loading...</span></p>
+            <p><strong>Temperature:</strong> <span id="temperature">Loading...</span>°C</p>
+            <p><strong>Weather:</strong> <span id="description">Loading...</span></p>
+            <p><strong>Wind Speed:</strong> <span id="wind_speed">Loading...</span> m/s</p>
+            <p><strong>Humidity:</strong> <span id="humidity">Loading...</span>%</p>
+        </section>
+        <section id="suggestions">
+            <h2>Suggestions</h2>
+            <p id="summary">Loading suggestions...</p>
+            <div id="activities"></div>
+        </section>
+    </div>
+    <script src="/static/script.js"></script>
+</body>
+</html>

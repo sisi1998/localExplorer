@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: local-explorer-api
+    env: docker
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: WEATHER_API_KEY
+        sync: false
+      - key: IPINFO_API_KEY
+        sync: false
+      - key: HOST
+        sync: false
+      - key: PORT
+        sync: false
