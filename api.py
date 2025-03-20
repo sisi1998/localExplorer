@@ -19,8 +19,12 @@ logger = logging.getLogger(__name__)
 
 app = FastAPI()
 
-WEATHER_API_KEY = "f4146563771897f24b5e41b6a00613cb"
-IPINFO_API_KEY = "24d60c025aecda"
+
+
+
+WEATHER_API_KEY = os.getenv("WEATHER_API_KEY")
+IPINFO_API_KEY = os.getenv("IPINFO_API_KEY")
+
 WEATHER_BASE_URL = "https://api.openweathermap.org/data/2.5/weather"
 IPINFO_BASE_URL = "https://ipinfo.io"
 
